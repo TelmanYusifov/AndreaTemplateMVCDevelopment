@@ -13,5 +13,9 @@ namespace BlogAppDevelopment.Controllers
         {
             return View();
         }
+        public ActionResult Travel()
+        {
+            return View();
+        }
     }
 }
