@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Data\Article.cs" />
     <Compile Include="Data\Author.cs" />
     <Compile Include="Data\BlogDbContext.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\DbContextExtensions.cs" />
     <Compile Include="Migrations\202003072006591_Initial.cs" />
     <Compile Include="Migrations\202003072006591_Initial.designer.cs">
       <DependentUpon>202003072006591_Initial.cs</DependentUpon>
@@ -191,6 +193,8 @@
       <DependentUpon>202003112018592_OrderAddedToMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ArticleIndexModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +220,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Travel.cshtml" />
+    <Content Include="Views\Menus\AllMenus.cshtml" />
+    <Content Include="Views\Shared\_NewsLetterPartial.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Shared\_SingleArticlePartial.cshtml" />
+    <Content Include="Views\Home\Categories.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -225,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003072006591_Initial.resx">

@@ -1,0 +1,11 @@
+﻿@model List<BlogAppDevelopment.Data.Menu>
+<nav id="colorlib-main-menu" role="navigation">
+    <ul>
+        <li class="colorlib-active">@Html.ActionLink("Home", "Index", "Home")</li>
+        @foreach (var menu in Model)
+        {
+            <li>@Html.ActionLink(menu.Name, menu.ActionName, menu.ControllerName)</li>
+        }
+    </ul>
+</nav>
+
