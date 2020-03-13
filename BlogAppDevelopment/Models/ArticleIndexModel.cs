@@ -19,6 +19,8 @@ namespace BlogAppDevelopment.Models
         [Required]
         public string ShortDescription { get; set; }
         public uint ViewCount { get; set; }
+        public int CommentCount { get; set; }
+        public Author Author { get; set; }
         public IEnumerable<CategoryModel> Categories { get; set; }
     }
 }

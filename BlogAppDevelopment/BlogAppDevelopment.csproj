@@ -225,6 +225,7 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_SingleArticlePartial.cshtml" />
     <Content Include="Views\Home\Categories.cshtml" />
+    <Content Include="Views\Shared\_SinglePopularArticlePartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

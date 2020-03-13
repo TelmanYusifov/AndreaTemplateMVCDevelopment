@@ -1,0 +1,16 @@
+﻿@model BlogAppDevelopment.Models.ArticleIndexModel
+    @{
+        var article = Model;
+    }
+
+<div class="block-21 mb-4 d-flex">
+    <a class="blog-img mr-4" style="background-image: url(../Content/images/@article.ImagePath);"></a>
+    <div class="text">
+        <h3 class="heading"><a href="#">@article.Title</a></h3>
+        <div class="meta">
+            <div><a href="#"><span class="icon-calendar"></span>@article.PublishDate.ToString("MM/dd/yyyy")</a></div>
+            <div><a href="#"><span class="icon-person"></span>Admin</a></div>
+            <div><a href="#"><span class="icon-chat"></span> @article.CommentCount</a></div>
+        </div>
+    </div>
+</div>

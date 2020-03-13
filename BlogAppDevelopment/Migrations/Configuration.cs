@@ -21,18 +21,18 @@
             string password = ConfigurationManager.AppSettings["Password"];
             context.AppUsers.AddOrUpdate(new AppUser
             {
-                Id=1,
-                IsActive=true,
-                IsAuthor=true,
-                Email=email,
-                Password= password,
-                Username=username
+                Id = 1,
+                IsActive = true,
+                IsAuthor = true,
+                Email = email,
+                Password = password,
+                Username = username
             });
             context.Authors.AddOrUpdate(new Author
             {
                 Id = 1,
-                UserId = 1
-            });
+                UserId = 1,
+        });
             context.Categories.AddOrUpdate(new Category
             {
                 Name = "Fashion",

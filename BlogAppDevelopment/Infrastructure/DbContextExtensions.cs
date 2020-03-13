@@ -22,7 +22,9 @@ namespace BlogAppDevelopment.Infrastructure
                 ImagePath = x.ImagePath,
                 PublishDate = x.PublishDate,
                 ShortDescription = x.ShortDescription,
-                Title = x.Title
+                Title = x.Title,
+                CommentCount = x.Comments.Count(),
+                Author = x.Author
                 //ViewCount = x.ViewCount
             }).ToList();
         }
