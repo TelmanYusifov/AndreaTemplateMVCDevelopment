@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Data\Article.cs" />
@@ -192,9 +193,16 @@
     <Compile Include="Migrations\202003112018592_OrderAddedToMenu.designer.cs">
       <DependentUpon>202003112018592_OrderAddedToMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003211830206_AuthorDetailsAdded.cs" />
+    <Compile Include="Migrations\202003211830206_AuthorDetailsAdded.designer.cs">
+      <DependentUpon>202003211830206_AuthorDetailsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ArticleDetailsModel.cs" />
     <Compile Include="Models\ArticleIndexModel.cs" />
+    <Compile Include="Models\AuthorModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +234,8 @@
     <Content Include="Views\Shared\_SingleArticlePartial.cshtml" />
     <Content Include="Views\Home\Categories.cshtml" />
     <Content Include="Views\Shared\_SinglePopularArticlePartial.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -248,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003112018592_OrderAddedToMenu.resx">
       <DependentUpon>202003112018592_OrderAddedToMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003211830206_AuthorDetailsAdded.resx">
+      <DependentUpon>202003211830206_AuthorDetailsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

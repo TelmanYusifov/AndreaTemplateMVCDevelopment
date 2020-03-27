@@ -19,6 +19,7 @@
             string email = ConfigurationManager.AppSettings["Email"];
             string username = ConfigurationManager.AppSettings["Username"];
             string password = ConfigurationManager.AppSettings["Password"];
+
             context.AppUsers.AddOrUpdate(new AppUser
             {
                 Id = 1,
@@ -28,11 +29,13 @@
                 Password = password,
                 Username = username
             });
+
             context.Authors.AddOrUpdate(new Author
             {
                 Id = 1,
                 UserId = 1,
         });
+
             context.Categories.AddOrUpdate(new Category
             {
                 Name = "Fashion",
@@ -58,6 +61,7 @@
                 Name = "Photography",
                 Id = 5,
             });
+
             context.Articles.AddOrUpdate(new Article
             {
                 AuthorId=1,

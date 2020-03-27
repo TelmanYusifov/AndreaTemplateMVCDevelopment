@@ -36,5 +36,9 @@ namespace BlogAppDevelopment.Controllers
             }).ToList();
             return View(categories);
         }
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }

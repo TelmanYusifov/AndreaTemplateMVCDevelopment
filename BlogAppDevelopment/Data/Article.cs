@@ -18,7 +18,7 @@ namespace BlogAppDevelopment.Data
         [Required]
         [StringLength(maximumLength:200,MinimumLength =3)]
         public string Title { get; set; }
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
         public int AuthorId { get; set; }
         public DateTime PublishDate { get; set; }
         [Required]
@@ -30,8 +30,8 @@ namespace BlogAppDevelopment.Data
         [Required]
         public string Description { get; set; }
         public uint ViewCount { get; set; }
-        public ICollection<Comment> Comments { get; set; }
-        public ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
         public Menu Menu { get; set; }
         public int MenuId { get; set; }
         public ICollection<Category> Categories { get; set; }
