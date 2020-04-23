@@ -32,7 +32,7 @@ namespace BlogAppDevelopment.Data
         public uint ViewCount { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
-        public Menu Menu { get; set; }
+        public virtual Menu Menu { get; set; }
         public int MenuId { get; set; }
         public ICollection<Category> Categories { get; set; }
 

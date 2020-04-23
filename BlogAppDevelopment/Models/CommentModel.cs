@@ -5,16 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace BlogAppDevelopment.Data
+namespace BlogAppDevelopment.Models
 {
-    public class Comment
+    public class CommentModel
     {
         public int Id { get; set; }
         [Required]
         [MaxLength(1000)]
         public string Text { get; set; }
         [Required]
-        [StringLength(maximumLength:50,MinimumLength =3)]
+        [StringLength(maximumLength: 50, MinimumLength = 3)]
         public string Name { get; set; }
         public string WebSite { get; set; }
         [Required]
@@ -23,7 +23,6 @@ namespace BlogAppDevelopment.Data
         public string Email { get; set; }
         [Column(TypeName = "smalldatetime")]
         public DateTime CommentDate { get; set; }
-        public Article Article { get; set; }
         public int ArticleId { get; set; }
     }
 }

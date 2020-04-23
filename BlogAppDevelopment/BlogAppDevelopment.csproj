@@ -113,6 +113,8 @@
     <Content Include="Content\css\owl.theme.default.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\Photos\HR Payroll.png" />
+    <Content Include="Files\Photos\work.png" />
     <Content Include="Fonts\flaticon\backup.txt" />
     <Content Include="Fonts\flaticon\font\flaticon.css" />
     <Content Include="Fonts\flaticon\font\flaticon.html" />
@@ -162,7 +164,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenusController.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Data\Article.cs" />
@@ -177,6 +185,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DbContextExtensions.cs" />
+    <Compile Include="Infrastructure\DbSetExtensions.cs" />
     <Compile Include="Migrations\202003072006591_Initial.cs" />
     <Compile Include="Migrations\202003072006591_Initial.designer.cs">
       <DependentUpon>202003072006591_Initial.cs</DependentUpon>
@@ -197,11 +206,24 @@
     <Compile Include="Migrations\202003211830206_AuthorDetailsAdded.designer.cs">
       <DependentUpon>202003211830206_AuthorDetailsAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003272058294_CommentChanged.cs" />
+    <Compile Include="Migrations\202003272058294_CommentChanged.designer.cs">
+      <DependentUpon>202003272058294_CommentChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003272100584_CommentChanged2.cs" />
+    <Compile Include="Migrations\202003272100584_CommentChanged2.designer.cs">
+      <DependentUpon>202003272100584_CommentChanged2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003272137194_CommentDateAdded.cs" />
+    <Compile Include="Migrations\202003272137194_CommentDateAdded.designer.cs">
+      <DependentUpon>202003272137194_CommentDateAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ArticleDetailsModel.cs" />
     <Compile Include="Models\ArticleIndexModel.cs" />
     <Compile Include="Models\AuthorModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -224,6 +246,12 @@
     <Content Include="Fonts\open-iconic\open-iconic.otf" />
     <Content Include="Fonts\open-iconic\open-iconic.ttf" />
     <Content Include="Fonts\open-iconic\open-iconic.woff" />
+    <Content Include="Files\HRPayroll.pdf" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Menus\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Success.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -236,6 +264,7 @@
     <Content Include="Views\Shared\_SinglePopularArticlePartial.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -245,6 +274,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\Comments\" />
+    <Folder Include="Views\Files\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003072006591_Initial.resx">
@@ -261,6 +293,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003211830206_AuthorDetailsAdded.resx">
       <DependentUpon>202003211830206_AuthorDetailsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003272058294_CommentChanged.resx">
+      <DependentUpon>202003272058294_CommentChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003272100584_CommentChanged2.resx">
+      <DependentUpon>202003272100584_CommentChanged2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003272137194_CommentDateAdded.resx">
+      <DependentUpon>202003272137194_CommentDateAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -2,16 +2,18 @@
 using BlogAppDevelopment.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace BlogAppDevelopment.Infrastructure
 {
     public static class DbContextExtensions
     {
-        public static IEnumerable<ArticleIndexModel> GetPaginatableData(this BlogDbContext blogDbContext, int page, int itemsPerPage)
+        public static async Task<IEnumerable<ArticleIndexModel>> GetPaginatableDataAsync(this BlogDbContext blogDbContext, int page, int itemsPerPage)
         {
-            return blogDbContext.Articles.OrderByDescending(x => x.PublishDate).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).Select(x => new ArticleIndexModel
+            return await blogDbContext.Articles.OrderByDescending(x => x.PublishDate).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).Select(x => new ArticleIndexModel
             {
                 Id = x.Id,
                 Categories = x.Categories.Select(y => new CategoryModel
@@ -26,7 +28,7 @@ namespace BlogAppDevelopment.Infrastructure
                 CommentCount = x.Comments.Count(),
                 Author = x.Author
                 //ViewCount = x.ViewCount
-            }).ToList();
+            }).ToListAsync();
         }
     }
 }

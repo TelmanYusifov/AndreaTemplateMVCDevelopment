@@ -1,0 +1,34 @@
+﻿@model BlogAppDevelopment.Areas.Admin.Models.LoginModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .field-validation-error, .validation-summary-errors * {
+        color: #721c24;
+    }
+</style>
+<h2>Login Page</h2>
+@using (Html.BeginForm("Login","Account",FormMethod.Post,htmlAttributes: new {@class = "bg-light p-5 contact-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Email)
+        @Html.TextBoxFor(x=>x.Email, htmlAttributes: new { type = "email", placeholder = "Your Email", @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Email)
+    </div>
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Password)
+        @Html.TextBoxFor(x => x.Password, htmlAttributes: new { type = "password", placeholder = "Your Password", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-primary py-3 px-5">
+    </div>
+}
+<form action="#" class="bg-light p-5 contact-form">
+</form>
+@section ValidationSection{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    }

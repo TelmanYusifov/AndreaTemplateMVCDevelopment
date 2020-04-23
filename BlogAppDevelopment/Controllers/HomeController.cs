@@ -3,7 +3,9 @@ using BlogAppDevelopment.Infrastructure;
 using BlogAppDevelopment.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,15 +20,16 @@ namespace BlogAppDevelopment.Controllers
             _blogDbContext = new BlogDbContext();
         }
         // GET: Home
-        public ActionResult Index(int page=1)
+        [ActionName("Index")]
+        public async Task<ActionResult> IndexAsync(int page=1)
         {
-            return View(_blogDbContext.GetPaginatableData(page, _itemsPerPage));
+            return View(await _blogDbContext.GetPaginatableDataAsync(page, _itemsPerPage));
         }
         public ActionResult Travel()
         {
             return View();
         }
-        public ActionResult Categories()
+        public  ActionResult Categories()
         {
             var categories = _blogDbContext.Categories.Select(x => new CategoryModel
             {
